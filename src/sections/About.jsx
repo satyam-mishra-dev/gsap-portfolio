@@ -5,15 +5,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-  const aboutText = `Obsessed with building fast, intuitive apps—from pixel-perfect React UIs to bulletproof serverless backends. Every line of code is a promise: quality that users feel.
-  When I’m not shipping:
-⚡️ Open-sourcing my latest experiment (or hacking on yours)
-🎥 Teaching devs on Twitch/YouTube—because rising tides lift all ships
-🧗 Rock climbing (problem-solving with real stakes)
-🎸 Strumming chords while CI pipelines pass (multitasking at its finest)`;
+  const text = `Driven by research and design clarity
+I craft intelligent, scalable solutions
+from ideas to real-world impact`;
+  const aboutText = `Obsessed with crafting intelligent, seamless experiences—from AI-driven web apps to research-backed ML systems. Every project I build carries one promise: innovation that scales and performs.
+
+When I’m not shipping:
+⚡️ Prototyping AI agents and ML experiments (or fine-tuning yours)
+📚 Sharing insights with devs & founders—because collaboration sparks growth
+🚀 Exploring optimization challenges like puzzles with real impact
+🎶 Jamming out ideas while models train (parallel processing, human edition)`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {

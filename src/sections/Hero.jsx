@@ -3,11 +3,12 @@ import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import FrameLimiter from "../components/FrameLimiter";
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const text = `I help growing brands and startups gain an
-unfair advantage through premium
-results driven webs/apps`;
+  const text = `I help brands and startups unlock growth through 
+  intelligent web experiences, AI-powered agents, 
+  & research-driven innovation`;
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen">
       <AnimatedHeaderSection
@@ -22,8 +23,11 @@ results driven webs/apps`;
       >
         <Canvas
           shadows
+          frameloop="demand"
+          dpr={isMobile ? [0.8, 1] : [1, 2]}
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
+          <FrameLimiter fps={isMobile ? 30 : 60} enabled />
           <ambientLight intensity={0.5} />
           <Float speed={0.5}>
             <Planet scale={isMobile ? 0.7 : 1} />

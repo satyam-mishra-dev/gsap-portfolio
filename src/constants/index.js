@@ -39,24 +39,25 @@ export const servicesData = [
     ],
   },
   {
-    title: "Security & Optimization",
+    title: "ML Research & Development",
     description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
+      "I design and experiment with cutting-edge machine learning and LLM solutions — from research prototypes to production-ready models — helping businesses gain intelligence, automation, and innovation at scale.",
     items: [
       {
-        title: "Code Audits",
-        description: "(Refactoring, Tech Debt Cleanup)",
+        title: "Model Prototyping",
+        description: "(Experimentation, Benchmarking, Fine-Tuning)",
       },
       {
-        title: "Pen Testing",
-        description: "(Vulnerability Assessments)",
+        title: "AI Agents",
+        description: "(Autonomous Workflows, Task Automation)",
       },
       {
-        title: "SEO Tech Stack",
-        description: "(SSR, Metadata, Structured Data)",
+        title: "Data Insights",
+        description: "(Preprocessing, Feature Engineering, Visualization)",
       },
     ],
   },
+  
   {
     title: "Web & Mobile Apps",
     description:
