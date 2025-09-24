@@ -18,8 +18,7 @@ const Hero = () => {
         textColor={"text-black"}
       />
       <figure
-        className="absolute inset-0 -z-50"
-        style={{ width: "100vw", height: "100vh" }}
+        className="absolute inset-0 -z-50 w-full h-full"
       >
         <Canvas
           shadows

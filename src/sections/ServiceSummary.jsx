@@ -1,40 +1,81 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 gsap.registerPlugin(ScrollTrigger);
 const ServiceSummary = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  
   useGSAP(() => {
+    // Responsive animation values
+    const animationValues = isMobile 
+      ? {
+          title1: 10,   // Reduced from 20
+          title2: -15,  // Reduced from -30
+          title3: 30,   // Reduced from 100
+          title4: -30,  // Reduced from -100
+        }
+      : {
+          title1: 20,
+          title2: -30,
+          title3: 100,
+          title4: -100,
+        };
+
+    // Clear any existing ScrollTriggers first
+    ScrollTrigger.getAll().forEach(trigger => {
+      if (trigger.vars.trigger && trigger.vars.trigger.includes("title-service")) {
+        trigger.kill();
+      }
+    });
+
     gsap.to("#title-service-1", {
-      xPercent: 20,
+      xPercent: animationValues.title1,
+      ease: "none",
       scrollTrigger: {
-        target: "#title-service-1",
-        scrub: true,
+        trigger: "#title-service-1",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
     gsap.to("#title-service-2", {
-      xPercent: -30,
+      xPercent: animationValues.title2,
+      ease: "none",
       scrollTrigger: {
-        target: "#title-service-2",
-        scrub: true,
+        trigger: "#title-service-2",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
     gsap.to("#title-service-3", {
-      xPercent: 100,
+      xPercent: animationValues.title3,
+      ease: "none",
       scrollTrigger: {
-        target: "#title-service-3",
-        scrub: true,
+        trigger: "#title-service-3",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
     gsap.to("#title-service-4", {
-      xPercent: -100,
+      xPercent: animationValues.title4,
+      ease: "none",
       scrollTrigger: {
-        target: "#title-service-4",
-        scrub: true,
+        trigger: "#title-service-4",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
-  });
+  }, [isMobile]);
   return (
-    <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-42 contact-text-responsive">
+    <section className="mt-20 font-light leading-snug text-center mb-42 contact-text-responsive">
       <div id="title-service-1">
         <p>Agentic AI & Integration</p>
       </div>

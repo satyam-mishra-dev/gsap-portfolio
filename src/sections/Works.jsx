@@ -99,6 +99,12 @@ const Works = () => {
     moveY.current(mouse.current.y);
   };
 
+  const handleProjectClick = (project) => {
+    if (project.href) {
+      window.open(project.href, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section id="work" className="flex flex-col min-h-screen">
       <AnimatedHeaderSection
@@ -119,6 +125,7 @@ const Works = () => {
             className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
+            onClick={() => handleProjectClick(project)}
           >
             {/* overlay */}
             <div
