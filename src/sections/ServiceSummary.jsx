@@ -22,55 +22,32 @@ const ServiceSummary = () => {
           title4: -100,
         };
 
-    // Clear any existing ScrollTriggers first
-    ScrollTrigger.getAll().forEach(trigger => {
-      if (trigger.vars.trigger && trigger.vars.trigger.includes("title-service")) {
-        trigger.kill();
-      }
-    });
-
     gsap.to("#title-service-1", {
       xPercent: animationValues.title1,
-      ease: "none",
       scrollTrigger: {
-        trigger: "#title-service-1",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-        invalidateOnRefresh: true,
+        target: "#title-service-1",
+        scrub: true,
       },
     });
     gsap.to("#title-service-2", {
       xPercent: animationValues.title2,
-      ease: "none",
       scrollTrigger: {
-        trigger: "#title-service-2",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-        invalidateOnRefresh: true,
+        target: "#title-service-2",
+        scrub: true,
       },
     });
     gsap.to("#title-service-3", {
       xPercent: animationValues.title3,
-      ease: "none",
       scrollTrigger: {
-        trigger: "#title-service-3",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-        invalidateOnRefresh: true,
+        target: "#title-service-3",
+        scrub: true,
       },
     });
     gsap.to("#title-service-4", {
       xPercent: animationValues.title4,
-      ease: "none",
       scrollTrigger: {
-        trigger: "#title-service-4",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-        invalidateOnRefresh: true,
+        target: "#title-service-4",
+        scrub: true,
       },
     });
   }, [isMobile]);
