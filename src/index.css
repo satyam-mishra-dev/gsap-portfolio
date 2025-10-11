@@ -110,19 +110,29 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
   background: #e5e5e0;
   color: black;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden; /* prevent horizontal overflow without affecting vertical sticky */
   font-family: var(--font-amiamie);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  /* Avoid 100vw here to prevent horizontal overflow when a scrollbar appears */
 }
 
 @utility clip-path {

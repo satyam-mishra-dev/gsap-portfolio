@@ -18,7 +18,7 @@ When I’m not shipping:
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
-      scale: 0.95,
+      scale: 0.92,
       scrollTrigger: {
         trigger: "#about",
         start: "bottom 80%",
